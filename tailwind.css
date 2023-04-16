@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  @apply
+
+  bg-slate-50
+}
+
+.app{
+  @apply
+
+  p-4
+
+  max-w-4xl
+  m-auto
+
+  flex
+  flex-col
+  items-center
+  justify-center
+  gap-6
+
+  text-slate-600
+}
+.app__jobs{
+  @apply
+
+  w-full
+  flex
+  flex-col
+  gap-6
+}
+
+.app__jobs--header{
+  @apply
+
+  text-center
+  space-y-4
+}
+.app__jobs--header h2{
+  @apply
+
+  inline-block
+  bg-slate-400
+  w-full
+  text-2xl
+  font-bold
+  text-slate-600
+  p-2
+  border
+  border-slate-600
+}
+
+ul{
+  @apply
+
+  ml-2
+}
+li a{
+  @apply
+
+  hover:text-slate-800
+}
+
+.jobs__title{
+  @apply
+
+  font-bold
+}
