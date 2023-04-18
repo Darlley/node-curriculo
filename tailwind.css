@@ -2,70 +2,169 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-  @apply
-
-  bg-slate-50
-}
-
 .app{
   @apply
 
-  p-4
+  text-zinc-500
 
-  max-w-4xl
+}
+.heade{
+  @apply
+
+  flex
+  flex-col
+}
+
+.fixed__top{
+  @apply
+
+  bg-zinc-200
+  p-4
+  md:p-6
+}
+.fixed__top--container{
+  @apply
+  
+  max-w-7xl
+  m-auto
+  
+  flex
+  flex-col
+  md:flex-row
+  gap-4
+  items-center
+  justify-between
+  
+}
+
+.fixed__top--item{
+  @apply
+
+  flex
+  items-center
+  gap-1
+  
+  hover:text-zinc-800
+
+  hover:animate-pulse
+}
+
+
+
+.header__content{
+  @apply
+
+  py-20
+  md:px-0
+
+  p-4
+  max-w-7xl
+  mx-auto
+  
+  flex
+  flex-col
+  md:flex-row
+  gap-14
+  justify-between
+  items-center
+}
+.header__content--profile{
+  @apply
+
+  w-full
+  md:w-5/12
+  flex
+  items-center
+  justify-center
+  drop-shadow-md
+}
+.header__content--headline{
+  @apply
+
+  flex-1
+  flex
+  flex-col
+
+  text-center
+  md:text-left
+
+  gap-2
+}
+.header__content--headline h1{
+  @apply
+
+  font-light
+  text-4xl
+  md:text-6xl
+}
+.header__content--headline h1 strong{
+  @apply
+  
+  font-bold
+  text-blue-500
+}
+.header__content--headline h2{
+  @apply
+
+  font-light
+  text-2xl
+}
+
+.app__main{
+  @apply
+
+  max-w-7xl
   m-auto
 
   flex
   flex-col
-  items-center
-  justify-center
-  gap-6
+  gap-14 
 
-  text-slate-600
+  p-4
+
+  xl:p-0
 }
-.app__jobs{
+
+.app__item{
   @apply
 
-  w-full
   flex
   flex-col
-  gap-6
+  gap-2
 }
-
-.app__jobs--header{
+.app__title{
   @apply
 
-  text-center
-  space-y-4
-}
-.app__jobs--header h2{
-  @apply
-
-  inline-block
-  bg-slate-400
-  w-full
   text-2xl
   font-bold
-  text-slate-600
-  p-2
-  border
-  border-slate-600
+  text-blue-500
+  uppercase
 }
-
-ul{
+.app__description{
   @apply
 
-  ml-2
-}
-li a{
-  @apply
-
-  hover:text-slate-800
+  text-lg
+  font-light
 }
 
-.jobs__title{
+.row{
   @apply
 
-  font-bold
+  flex
+  flex-col
+  md:flex-row
+  gap-14
+}
+.col-5{
+  @apply
+
+  w-full
+  md:w-5/12
+}
+.col-7{
+  @apply
+
+  flex
+  flex-col
+  flex-1
 }
