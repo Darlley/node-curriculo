@@ -5,7 +5,7 @@
 .app{
   @apply
 
-  text-zinc-500
+  text-zinc-400
 
 }
 .heade{
@@ -25,7 +25,7 @@
 .fixed__top--container{
   @apply
   
-  max-w-7xl
+  max-w-4xl
   m-auto
   
   flex
@@ -45,6 +45,7 @@
   gap-1
   
   hover:text-zinc-800
+  transition-colors
 
   hover:animate-pulse
 }
@@ -58,13 +59,13 @@
   md:px-0
 
   p-4
-  max-w-7xl
+  max-w-4xl
   mx-auto
   
   flex
   flex-col
   md:flex-row
-  gap-14
+  gap-20
   justify-between
   items-center
 }
@@ -113,16 +114,17 @@
 .app__main{
   @apply
 
-  max-w-7xl
+  max-w-4xl
   m-auto
 
   flex
   flex-col
-  gap-14 
+  gap-20 
 
-  p-4
+  px-4
+  py-10
 
-  xl:p-0
+  xl:px-0
 }
 
 .app__item{
@@ -135,7 +137,7 @@
 .app__title{
   @apply
 
-  text-2xl
+  text-xl
   font-bold
   text-blue-500
   uppercase
@@ -143,7 +145,7 @@
 .app__description{
   @apply
 
-  text-lg
+  text-base
   font-light
 }
 
@@ -153,7 +155,7 @@
   flex
   flex-col
   md:flex-row
-  gap-14
+  gap-20
 }
 .col-5{
   @apply
@@ -163,8 +165,154 @@
 }
 .col-7{
   @apply
-
+  
+  flex-1
+}
+.col-5, .col-7{
+  @apply
+  
   flex
   flex-col
-  flex-1
+  gap-20
+}
+
+
+.app__container{
+  @apply
+
+  flex
+  w-full
+  flex-wrap
+  justify-start
+  gap-2
+}
+.app__tag{
+  @apply
+
+  flex 
+  items-start 
+  justify-center 
+  px-2 
+  py-1 
+  text-sm 
+  font-bold 
+  bg-blue-500 
+  uppercase
+  rounded-full 
+  w-max 
+  text-blue-50
+}
+
+.app__date--timeline{
+  @apply
+
+  text-base
+}
+.app__title--timeline{
+  @apply
+
+  text-lg
+  font-bold
+  uppercase
+}
+.app__description--timeline{
+  @apply
+
+  text-base
+  font-light
+}
+
+
+.app__timeline{
+  @apply
+
+  relative
+  flex
+  flex-col
+  gap-2
+}
+
+.app__timeline::after {
+  @apply
+
+  content-[""]
+  absolute
+  w-1
+  bg-blue-100
+  top-6
+  bottom-0
+  ml-[10px]
+}
+.timeline__item {
+  @apply
+  
+  relative
+  pl-8
+}
+.timeline__item::after {
+  @apply
+
+  content-[""]
+  absolute
+  left-0
+
+  w-6
+  h-6
+  
+  top-3
+  rounded-full
+  border-4
+  border-blue-500
+  bg-blue-600
+  shadow-md
+  z-10
+}
+.left {
+  left: 0;
+}
+.content {
+  @apply
+
+  relative
+  my-3
+}
+@media screen and (max-width: 600px) {
+  .timeline::after {
+    left: 31px;
+  }
+  .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+  .container::before {
+    left: 60px;
+    border: medium solid #ffffff;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #ffffff transparent transparent;
+  }
+  .left::after,
+  .right::after {
+    left: 15px;
+  }
+  .right {
+    left: 0%;
+  }
+}
+
+.footer{
+  @apply
+
+  w-full
+  bg-zinc-200
+}
+.footer__container{
+  @apply
+  
+  flex
+  items-center
+  max-w-4xl
+  m-auto
+  h-20
+  justify-between
 }
