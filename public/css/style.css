@@ -516,6 +516,10 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.flex {
+  display: flex;
+}
+
 .h-6 {
   height: 1.5rem;
 }
@@ -530,6 +534,10 @@ video {
 
 .w-8 {
   width: 2rem;
+}
+
+.gap-4 {
+  gap: 1rem;
 }
 
 .underline {
