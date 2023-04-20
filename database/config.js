@@ -1,14 +1,17 @@
-const sqlite3 = require('sqlite3')
-const {open} = require('sqlite')
+const sqlite3 = require('sqlite3').verbose();
+const db = new sqlite3.Database('curriculo.db');
 
-// const dbConnection = open('banco.sqlite', { Promise });
-async function openDb () {
-    return open({
-        filename: '/tmp/database.db',
-        driver: sqlite3.Database
-    })
-}
+db.serialize(() => {
+    db.run("CREATE TABLE IF NOT EXISTS PROFILE (id INTEGER PRIMARY KEY autoincrement, CONTENT TEXT);");
+    db.run("INSERT INTO PROFILE VALUES (null,'Meu nome é Darlley 2');");
+
+    // const stmt = db.prepare("INSERT INTO lorem VALUES (?)");
+    // stmt.finalize();
+    // db.each("SELECT rowid AS id, info FROM lorem", (err, row) => {
+    //     console.log(row.id + ": " + row.info);
+    // });
+});
 
 module.exports = {
-    openDb: openDb
+    db
 }

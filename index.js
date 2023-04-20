@@ -1,9 +1,11 @@
-const { openDb } = require('./database/config')
+// const { openDb } = require('./database/config')
 
 const express = require('express')
-const app = express()
+const { db } = require('./database/config')
+const runDatabase = () => db
+runDatabase()
 
-openDb()
+const app = express()
 
 const port = 3000
 
@@ -17,7 +19,15 @@ const metadata = {
 
 // C L I E N T
 app.get('/', (req, res) => {
-  res.render('home', metadata)
+  const profile = db.serialize(async () => {
+    return await db.run("SELECT * FROM PROFILE;")
+  })
+  console.log(profile)
+
+  res.render('home', {
+    appName: 'Darlley Brito - Currículo',
+    appDescription: 'Sou Desenvolvedor Web Full Stack Júnior, UI Designer, SEO e AWS Cloud Pratictioner, veja meu currículo.',
+  })
 })
 
 // A D M I N 
